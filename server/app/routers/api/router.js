@@ -6,13 +6,18 @@ const { sayWelcome } = require("../../controllers/sayActions");
 
 router.get("/", sayWelcome);
 
+const programRouter = require("./programs/router");
+
+router.use("/programs", programRouter);
+
 const itemsRouter = require("./items/router");
 
 router.use("/items", itemsRouter);
 
-const programRouter = require("./programs/router");
+const categoriesRouter = require('./categories/router');
 
-router.use("/programs", programRouter);
+router.use('/categories', categoriesRouter)
+
 
 /* ************************************************************************* */
 
